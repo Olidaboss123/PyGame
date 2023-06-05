@@ -56,6 +56,8 @@ class Player_Elemental(pygame.sprite.Sprite):
     def get_input(self):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_RIGHT]:
+            #Moving left and right
+            #Difference in speed with every character
             if self.character_status == "elemental":
                 self.direction.x = 1.5
             elif self.character_status == "dwarf" or self.character_status == "winged":
@@ -71,8 +73,7 @@ class Player_Elemental(pygame.sprite.Sprite):
                 self.direction.x = -0.7
         else:
             self.direction.x = 0
-        if keys[pygame.K_DOWN]:
-            self.slide()
+        #Other controls
         if keys[pygame.K_SPACE]:
             self.jump()
         elif keys[pygame.K_j]:
